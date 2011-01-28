@@ -11,15 +11,8 @@ module Omnisocial
     end
 
     def callback
-      account = case request.env['rack.auth']['provider']
-        when 'twitter' then
-          Omnisocial::TwitterAccount.find_or_create_from_auth_hash(request.env['rack.auth'])
-        when 'facebook' then
-          Omnisocial::FacebookAccount.find_or_create_from_auth_hash(request.env['rack.auth'])
-        when 'linked_in' then
-          Omnisocial::LinkedInAccount.find_or_create_from_auth_hash(request.env['rack.auth'])
-      end
-
+      @provider = formats_provider(request.env['rack.auth']['provider'])
+      account = instance_eval("#{@provider}.find_or_create_from_auth_hash(request.env['rack.auth'])")
       self.current_user = account.find_or_create_user
 
       flash[:notice] = 'You have logged in successfully.'
@@ -35,5 +28,13 @@ module Omnisocial
       logout!
       redirect_to(root_path)
     end
+
+    protected
+
+    def formats_provider(provider)
+      "Omnisocial::#{provider.camelize}Account" if ['twitter', 'linked_in', 'facebook'].include?(provider)
+    end
+
   end
+
 end
