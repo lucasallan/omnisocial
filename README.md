@@ -24,6 +24,7 @@ Some more detailed installation instructions are in the [project announcement ar
 
 * [Klaus Hartl](http://github.com/carhartl)
 * [Stephen Aument](http://github.com/stephenaument)
+* [Lucas Allan](http://github.com/lucasallan)
 
 ## Copyright & License
 
