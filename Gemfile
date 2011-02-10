@@ -6,3 +6,7 @@ gem 'oa-core',      :require => 'omniauth/core'
 gem 'oa-oauth',     :require => 'omniauth/oauth'
 gem 'bcrypt-ruby',  :require => 'bcrypt'
 gem 'activesupport'
+
+group :development do
+  gem 'github'
+end

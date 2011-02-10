@@ -32,7 +32,7 @@ module Omnisocial
     protected
 
     def formats_provider(provider)
-      "Omnisocial::#{provider.camelize}Account" if ['twitter', 'linked_in', 'facebook'].include?(provider)
+      "Omnisocial::#{provider.camelize}Account" if ['twitter', 'linked_in', 'facebook', 'github'].include?(provider)
     end
 
   end

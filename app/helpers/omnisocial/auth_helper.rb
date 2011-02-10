@@ -12,21 +12,12 @@ module Omnisocial
       content_tag(:a, content_tag(:span, 'Sign in with Facebook'), :class => 'omnisocial-button facebook', :href => auth_request_path(:service => 'facebook'))
     end
 
-    def twitter_login_button
-      content_tag(:a, image_tag('/images/omnisocial/signin_twitter.png', :alt => 'Sign in with Twitter'), :href => auth_request_path(:service => 'twitter'))
-    end
-
-    def facebook_login_button
-      content_tag(:a, image_tag('/images/omnisocial/signin_facebook.png', :alt => 'Sign in with Facebook'), :href => auth_request_path(:service => 'facebook'))
-    end
-
-    def linkedin_login_button
-      content_tag(:a, content_tag(:img, :src => '/images/omnisocial/signin_linked_in.png', :alt => 'Sign in with LinkeIn'), :href => auth_request_path(:service => 'linked_in'))
-    end
-
     def big_linkedin_login_button
       content_tag(:a, content_tag(:span, 'Sign in with LinkedIn'), :class => 'omnisocial-button linkedin', :href => auth_request_path(:service => 'linked_in'))
     end
 
+    def big_github_login_button
+      content_tag(:a, content_tag(:span, 'Sign in with Github'), :class => 'omnisocial-button github', :href => auth_request_path(:service => 'github'))
+    end
   end
 end
