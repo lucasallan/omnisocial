@@ -5,7 +5,7 @@ require 'omnisocial/version'
 require 'bundler'
 
 Gem::Specification.new do |gem|  
-  gem.name          = 'omnisocial'
+  gem.name          = 'omnisocial'https://github.com/lucasallan/omnisocial/blob/master/omnisocial.gemspec
   gem.version       = Omnisocial::VERSION
   gem.platform      = Gem::Platform::RUBY
   gem.authors       = ['Tim Riley']
@@ -17,7 +17,7 @@ Gem::Specification.new do |gem|
   gem.files         = %w(README.md) + Dir.glob('{lib,app,config}/**/*')
   gem.require_path  = 'lib'
   
-  gem.add_dependency 'oa-core',     '=> 0.1.2'
-  gem.add_dependency 'oa-oauth',    '=> 0.1.2'
-  gem.add_dependency 'bcrypt-ruby', '~> 2.1'
+  gem.add_dependency 'oa-core',     '>= 0.1.2'
+  gem.add_dependency 'oa-oauth',    '>= 0.1.2'
+  gem.add_dependency 'bcrypt-ruby', '>= 2.1'
 end
